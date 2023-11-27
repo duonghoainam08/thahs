@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php
-include 'header.php'
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Thu thập dữ liệu</title>
+ </head>
+ <?php
+ session_start();
+ if(!isset($_SESSION['dangnhap'])){
+ 	header('Location:login.php');
+ } 
 ?>
-<body>
-		<nav class="navbar navbar-default navbar-fixed-top" style="background-color:blue;">
-			<div class="container-fluid">
-				<label class="navbar-brand" id="title">Cảnh Sát Thi Hành Án Hình Sự và Hỗ Trợ Tư Pháp Công an huyện Lấp Vò</label>
-			</div>
-		</nav>
-		<?php include 'login.php' ?>
-		<?php include 'footer.php' ?>
-</body>
-
-</html>
+ <body>
+    <h1>
+        <?php
+            include("config/Base_url.php");
+            include("config/config.php");
+			include("header.php");
+            include("modules/main.php");                
+			include("footer.php");
+        ?>
+    </h1>
+ </body>
+ </html>
